@@ -1,0 +1,60 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Suite",
+    "children" : [ {
+      "name" : "Test",
+      "children" : [ {
+        "name" : "com.MavenTest01",
+        "children" : [ {
+          "name" : "testCase1",
+          "uid" : "5dba4ed3368058c2",
+          "parentUid" : "a3e8af28f87735ee430e680517969e61",
+          "status" : "passed",
+          "time" : {
+            "start" : 1577873490614,
+            "stop" : 1577873490623,
+            "duration" : 9
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "testCase2",
+          "uid" : "22418da28f1fdbca",
+          "parentUid" : "a3e8af28f87735ee430e680517969e61",
+          "status" : "passed",
+          "time" : {
+            "start" : 1577873490686,
+            "stop" : 1577873490686,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "a3e8af28f87735ee430e680517969e61"
+      }, {
+        "name" : "com.MavenTest02",
+        "children" : [ {
+          "name" : "test01",
+          "uid" : "50a4e6155a0ada92",
+          "parentUid" : "2b8e8f311cac67b63a435b055c21a1c8",
+          "status" : "passed",
+          "time" : {
+            "start" : 1577873501784,
+            "stop" : 1577873501784,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "2b8e8f311cac67b63a435b055c21a1c8"
+      } ],
+      "uid" : "7314231e84d67a341867b5c9d3f928d2"
+    } ],
+    "uid" : "29f4dcc45a0e26cd7c7462063cee854b"
+  } ]
+}

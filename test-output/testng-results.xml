@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="8954" started-at="2019-12-30T13:51:56Z" finished-at="2019-12-30T13:52:05Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="8954" started-at="2019-12-30T13:51:56Z" finished-at="2019-12-30T13:52:05Z">
+      <class name="com.MavenTest02">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.MavenTest02@61832929]" name="setup" is-config="true" duration-ms="7824" started-at="2019-12-30T13:51:56Z" finished-at="2019-12-30T13:52:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="test01()[pri:0, instance:com.MavenTest02@61832929]" name="test01" duration-ms="3" started-at="2019-12-30T13:52:04Z" finished-at="2019-12-30T13:52:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test01 -->
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:com.MavenTest02@61832929]" name="quitBrowser" is-config="true" duration-ms="1090" started-at="2019-12-30T13:52:04Z" finished-at="2019-12-30T13:52:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+      </class> <!-- com.MavenTest02 -->
+      <class name="com.MavenTest01">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.MavenTest01@5b275dab]" name="beforeClass" is-config="true" duration-ms="16" started-at="2019-12-30T13:51:56Z" finished-at="2019-12-30T13:51:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.MavenTest01@5b275dab]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2019-12-30T13:51:56Z" finished-at="2019-12-30T13:51:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.MavenTest01@5b275dab]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2019-12-30T13:51:56Z" finished-at="2019-12-30T13:51:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testCase1()[pri:0, instance:com.MavenTest01@5b275dab]" name="testCase1" duration-ms="6" started-at="2019-12-30T13:51:56Z" finished-at="2019-12-30T13:51:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase1 -->
+        <test-method status="PASS" signature="testCase2()[pri:0, instance:com.MavenTest01@5b275dab]" name="testCase2" duration-ms="10" started-at="2019-12-30T13:51:56Z" finished-at="2019-12-30T13:51:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase2 -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.MavenTest01@5b275dab]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-12-30T13:51:56Z" finished-at="2019-12-30T13:51:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.MavenTest01@5b275dab]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-12-30T13:51:56Z" finished-at="2019-12-30T13:51:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.MavenTest01@5b275dab]" name="afterClass" is-config="true" duration-ms="1" started-at="2019-12-30T13:51:56Z" finished-at="2019-12-30T13:51:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.MavenTest01 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

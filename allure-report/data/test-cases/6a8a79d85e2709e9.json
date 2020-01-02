@@ -1,0 +1,92 @@
+{
+  "uid" : "6a8a79d85e2709e9",
+  "name" : "test01",
+  "fullName" : "com.MavenTest02.test01",
+  "historyId" : "719ad782f3fcb051770a9a382a07b5d6",
+  "time" : {
+    "start" : 1577764068867,
+    "stop" : 1577764068868,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "setup",
+    "time" : {
+      "start" : 1577764058152,
+      "stop" : 1577764068845,
+      "duration" : 10693
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "quitBrowser",
+    "time" : {
+      "start" : 1577764068925,
+      "stop" : 1577764070149,
+      "duration" : 1224
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "com.MavenTest02"
+  }, {
+    "name" : "testClass",
+    "value" : "com.MavenTest02"
+  }, {
+    "name" : "testMethod",
+    "value" : "test01"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Test"
+  }, {
+    "name" : "subSuite",
+    "value" : "com.MavenTest02"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-NMA0ISQ"
+  }, {
+    "name" : "thread",
+    "value" : "4208@DESKTOP-NMA0ISQ.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "6a8a79d85e2709e9.json",
+  "parameterValues" : [ ]
+}

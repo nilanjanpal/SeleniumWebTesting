@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Jan 01 15:41:30 IST 2020","Wed Jan 01 15:41:30 IST 2020","9","Suite","Test","com.MavenTest01","com.MavenTest01","testCase1","testCase1",""
+"passed","Wed Jan 01 15:41:41 IST 2020","Wed Jan 01 15:41:41 IST 2020","0","Suite","Test","com.MavenTest02","com.MavenTest02","test01","test01",""
+"passed","Wed Jan 01 15:41:30 IST 2020","Wed Jan 01 15:41:30 IST 2020","0","Suite","Test","com.MavenTest01","com.MavenTest01","testCase2","testCase2",""

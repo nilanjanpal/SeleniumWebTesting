@@ -1,0 +1,134 @@
+{
+  "uid" : "50a4e6155a0ada92",
+  "name" : "test01",
+  "fullName" : "com.MavenTest02.test01",
+  "historyId" : "719ad782f3fcb051770a9a382a07b5d6",
+  "time" : {
+    "start" : 1577873501784,
+    "stop" : 1577873501784,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "setup",
+    "time" : {
+      "start" : 1577873490730,
+      "stop" : 1577873501770,
+      "duration" : 11040
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "quitBrowser",
+    "time" : {
+      "start" : 1577873501797,
+      "stop" : 1577873503336,
+      "duration" : 1539
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "com.MavenTest02"
+  }, {
+    "name" : "testClass",
+    "value" : "com.MavenTest02"
+  }, {
+    "name" : "testMethod",
+    "value" : "test01"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Test"
+  }, {
+    "name" : "subSuite",
+    "value" : "com.MavenTest02"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-NMA0ISQ"
+  }, {
+    "name" : "thread",
+    "value" : "17724@DESKTOP-NMA0ISQ.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "680d8e99a5e8d557",
+      "status" : "passed",
+      "time" : {
+        "start" : 1577866092832,
+        "stop" : 1577866092833,
+        "duration" : 1
+      }
+    }, {
+      "uid" : "49e951e409c892",
+      "status" : "passed",
+      "time" : {
+        "start" : 1577861222805,
+        "stop" : 1577861222805,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "8aa0ef197cb1fa2c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1577790280917,
+        "stop" : 1577790280918,
+        "duration" : 1
+      }
+    }, {
+      "uid" : "6fe9804104549806",
+      "status" : "passed",
+      "time" : {
+        "start" : 1577788160120,
+        "stop" : 1577788160120,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "6a8a79d85e2709e9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1577764068867,
+        "stop" : 1577764068868,
+        "duration" : 1
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "50a4e6155a0ada92.json",
+  "parameterValues" : [ ]
+}
