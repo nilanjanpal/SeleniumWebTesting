@@ -1,12 +1,12 @@
 {
-  "uid" : "df44263031f040ed",
-  "name" : "testCase1",
-  "fullName" : "com.MavenTest01.testCase1",
-  "historyId" : "dfce8a14bfbbc1e1cf7598dba4167e67",
+  "uid" : "e45c077335c31e7b",
+  "name" : "testCase2",
+  "fullName" : "com.MavenTest01.testCase2",
+  "historyId" : "e29f428daef1a5fa7ffae6876a2336dd",
   "time" : {
-    "start" : 1577764058007,
-    "stop" : 1577764058014,
-    "duration" : 7
+    "start" : 1577788150849,
+    "stop" : 1577788150857,
+    "duration" : 8
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,8 +14,8 @@
   "beforeStages" : [ {
     "name" : "beforeMethod",
     "time" : {
-      "start" : 1577764057577,
-      "stop" : 1577764057577,
+      "start" : 1577788150839,
+      "stop" : 1577788150839,
       "duration" : 0
     },
     "description" : "",
@@ -23,32 +23,32 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
     "attachmentsCount" : 0,
-    "stepsCount" : 0,
-    "hasContent" : false
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
   }, {
     "name" : "beforeClass",
     "time" : {
-      "start" : 1577764057538,
-      "stop" : 1577764057553,
-      "duration" : 15
+      "start" : 1577788150396,
+      "stop" : 1577788150414,
+      "duration" : 18
     },
     "description" : "",
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
     "attachmentsCount" : 0,
-    "stepsCount" : 0,
-    "hasContent" : false
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
   } ],
   "afterStages" : [ {
     "name" : "afterMethod",
     "time" : {
-      "start" : 1577764058045,
-      "stop" : 1577764058045,
+      "start" : 1577788150869,
+      "stop" : 1577788150869,
       "duration" : 0
     },
     "description" : "",
@@ -56,15 +56,15 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
     "attachmentsCount" : 0,
-    "stepsCount" : 0,
-    "hasContent" : false
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
   }, {
     "name" : "afterClass",
     "time" : {
-      "start" : 1577764058149,
-      "stop" : 1577764058149,
+      "start" : 1577788150889,
+      "stop" : 1577788150889,
       "duration" : 0
     },
     "description" : "",
@@ -72,10 +72,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
     "attachmentsCount" : 0,
-    "stepsCount" : 0,
-    "hasContent" : false
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
   } ],
   "labels" : [ {
     "name" : "package",
@@ -85,7 +85,7 @@
     "value" : "com.MavenTest01"
   }, {
     "name" : "testMethod",
-    "value" : "testCase1"
+    "value" : "testCase2"
   }, {
     "name" : "parentSuite",
     "value" : "Suite"
@@ -100,7 +100,7 @@
     "value" : "DESKTOP-NMA0ISQ"
   }, {
     "name" : "thread",
-    "value" : "4208@DESKTOP-NMA0ISQ.main(1)"
+    "value" : "4784@DESKTOP-NMA0ISQ.main(1)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -119,6 +119,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "df44263031f040ed.json",
+  "source" : "e45c077335c31e7b.json",
   "parameterValues" : [ ]
 }

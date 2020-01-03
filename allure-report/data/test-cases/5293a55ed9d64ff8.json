@@ -1,12 +1,12 @@
 {
-  "uid" : "5dba4ed3368058c2",
-  "name" : "testCase1",
-  "fullName" : "com.MavenTest01.testCase1",
-  "historyId" : "dfce8a14bfbbc1e1cf7598dba4167e67",
+  "uid" : "5293a55ed9d64ff8",
+  "name" : "testCase2",
+  "fullName" : "com.MavenTest01.testCase2",
+  "historyId" : "e29f428daef1a5fa7ffae6876a2336dd",
   "time" : {
-    "start" : 1577873490614,
-    "stop" : 1577873490623,
-    "duration" : 9
+    "start" : 1577962255337,
+    "stop" : 1577962255337,
+    "duration" : 0
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,24 +14,24 @@
   "beforeStages" : [ {
     "name" : "beforeClass",
     "time" : {
-      "start" : 1577873490082,
-      "stop" : 1577873490105,
-      "duration" : 23
+      "start" : 1577962254574,
+      "stop" : 1577962254588,
+      "duration" : 14
     },
     "description" : "",
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
     "attachmentsCount" : 0,
-    "stepsCount" : 0,
-    "hasContent" : false
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
   }, {
     "name" : "beforeMethod",
     "time" : {
-      "start" : 1577873490133,
-      "stop" : 1577873490133,
+      "start" : 1577962255325,
+      "stop" : 1577962255325,
       "duration" : 0
     },
     "description" : "",
@@ -39,32 +39,32 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
     "attachmentsCount" : 0,
-    "stepsCount" : 0,
-    "hasContent" : false
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
   } ],
   "afterStages" : [ {
     "name" : "afterClass",
     "time" : {
-      "start" : 1577873490725,
-      "stop" : 1577873490725,
-      "duration" : 0
+      "start" : 1577962255374,
+      "stop" : 1577962255375,
+      "duration" : 1
     },
     "description" : "",
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
     "attachmentsCount" : 0,
-    "stepsCount" : 0,
-    "hasContent" : false
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
   }, {
     "name" : "afterMethod",
     "time" : {
-      "start" : 1577873490662,
-      "stop" : 1577873490662,
+      "start" : 1577962255355,
+      "stop" : 1577962255355,
       "duration" : 0
     },
     "description" : "",
@@ -72,10 +72,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
     "attachmentsCount" : 0,
-    "stepsCount" : 0,
-    "hasContent" : false
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
   } ],
   "labels" : [ {
     "name" : "package",
@@ -85,7 +85,7 @@
     "value" : "com.MavenTest01"
   }, {
     "name" : "testMethod",
-    "value" : "testCase1"
+    "value" : "testCase2"
   }, {
     "name" : "parentSuite",
     "value" : "Suite"
@@ -100,7 +100,7 @@
     "value" : "DESKTOP-NMA0ISQ"
   }, {
     "name" : "thread",
-    "value" : "17724@DESKTOP-NMA0ISQ.main(1)"
+    "value" : "13660@DESKTOP-NMA0ISQ.main(1)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -118,49 +118,65 @@
   "extra" : {
     "severity" : "normal",
     "retries" : [ {
-      "uid" : "ff4641ceabed8d4f",
+      "uid" : "114fe6e3f19a81eb",
       "status" : "passed",
       "time" : {
-        "start" : 1577866069806,
-        "stop" : 1577866069822,
-        "duration" : 16
+        "start" : 1577961803757,
+        "stop" : 1577961803757,
+        "duration" : 0
       }
     }, {
-      "uid" : "e217ba2b87726f30",
+      "uid" : "8c4ff4a95f8c62b5",
       "status" : "passed",
       "time" : {
-        "start" : 1577861212045,
-        "stop" : 1577861212057,
-        "duration" : 12
+        "start" : 1577873490686,
+        "stop" : 1577873490686,
+        "duration" : 0
       }
     }, {
-      "uid" : "6b7fdd3642a08006",
+      "uid" : "675816f6b8d0c544",
       "status" : "passed",
       "time" : {
-        "start" : 1577790272513,
-        "stop" : 1577790272522,
-        "duration" : 9
+        "start" : 1577866069945,
+        "stop" : 1577866069945,
+        "duration" : 0
       }
     }, {
-      "uid" : "c1b6a708d5186c1",
+      "uid" : "56ac5b016b983243",
       "status" : "passed",
       "time" : {
-        "start" : 1577788150778,
-        "stop" : 1577788150788,
-        "duration" : 10
+        "start" : 1577861212106,
+        "stop" : 1577861212106,
+        "duration" : 0
       }
     }, {
-      "uid" : "df44263031f040ed",
+      "uid" : "802895dab12825eb",
       "status" : "passed",
       "time" : {
-        "start" : 1577764058007,
-        "stop" : 1577764058014,
-        "duration" : 7
+        "start" : 1577790272572,
+        "stop" : 1577790272573,
+        "duration" : 1
+      }
+    }, {
+      "uid" : "e45c077335c31e7b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1577788150849,
+        "stop" : 1577788150857,
+        "duration" : 8
+      }
+    }, {
+      "uid" : "703bf34457b60267",
+      "status" : "passed",
+      "time" : {
+        "start" : 1577764058127,
+        "stop" : 1577764058127,
+        "duration" : 0
       }
     } ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "5dba4ed3368058c2.json",
+  "source" : "5293a55ed9d64ff8.json",
   "parameterValues" : [ ]
 }

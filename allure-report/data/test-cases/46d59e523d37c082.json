@@ -1,12 +1,12 @@
 {
-  "uid" : "680d8e99a5e8d557",
+  "uid" : "46d59e523d37c082",
   "name" : "test01",
   "fullName" : "com.MavenTest02.test01",
   "historyId" : "719ad782f3fcb051770a9a382a07b5d6",
   "time" : {
-    "start" : 1577866092832,
-    "stop" : 1577866092833,
-    "duration" : 1
+    "start" : 1577961814494,
+    "stop" : 1577961814494,
+    "duration" : 0
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,36 +14,36 @@
   "beforeStages" : [ {
     "name" : "setup",
     "time" : {
-      "start" : 1577866069991,
-      "stop" : 1577866092815,
-      "duration" : 22824
+      "start" : 1577961803807,
+      "stop" : 1577961814480,
+      "duration" : 10673
     },
     "description" : "",
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
     "attachmentsCount" : 0,
-    "stepsCount" : 0,
-    "hasContent" : false
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
   } ],
   "afterStages" : [ {
     "name" : "quitBrowser",
     "time" : {
-      "start" : 1577866092849,
-      "stop" : 1577866094413,
-      "duration" : 1564
+      "start" : 1577961814506,
+      "stop" : 1577961816872,
+      "duration" : 2366
     },
     "description" : "",
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
     "attachmentsCount" : 0,
-    "stepsCount" : 0,
-    "hasContent" : false
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
   } ],
   "labels" : [ {
     "name" : "package",
@@ -68,7 +68,7 @@
     "value" : "DESKTOP-NMA0ISQ"
   }, {
     "name" : "thread",
-    "value" : "16332@DESKTOP-NMA0ISQ.main(1)"
+    "value" : "3876@DESKTOP-NMA0ISQ.main(1)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -87,6 +87,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "680d8e99a5e8d557.json",
+  "source" : "46d59e523d37c082.json",
   "parameterValues" : [ ]
 }
