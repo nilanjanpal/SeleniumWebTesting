@@ -1,2 +1,3 @@
-com\MavenTest02.class
-com\MavenTest01.class
+customReport\ReportGenerator.class
+customReport\ExcelGenerator.class
+customReport\ResultCollector.class

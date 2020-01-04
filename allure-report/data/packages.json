@@ -7,25 +7,25 @@
       "name" : "MavenTest01",
       "children" : [ {
         "name" : "testCase1",
-        "uid" : "5dba4ed3368058c2",
+        "uid" : "64a1463f338f31a1",
         "parentUid" : "f682d01b1efc644abb83757681784b23",
         "status" : "passed",
         "time" : {
-          "start" : 1577873490614,
-          "stop" : 1577873490623,
-          "duration" : 9
+          "start" : 1577962255275,
+          "stop" : 1577962255283,
+          "duration" : 8
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
         "name" : "testCase2",
-        "uid" : "22418da28f1fdbca",
+        "uid" : "5293a55ed9d64ff8",
         "parentUid" : "f682d01b1efc644abb83757681784b23",
         "status" : "passed",
         "time" : {
-          "start" : 1577873490686,
-          "stop" : 1577873490686,
+          "start" : 1577962255337,
+          "stop" : 1577962255337,
           "duration" : 0
         },
         "flaky" : false,
@@ -37,13 +37,13 @@
       "name" : "MavenTest02",
       "children" : [ {
         "name" : "test01",
-        "uid" : "50a4e6155a0ada92",
+        "uid" : "63da46b98313e39b",
         "parentUid" : "502c0c296e6de834112dc3f5d191c014",
         "status" : "passed",
         "time" : {
-          "start" : 1577873501784,
-          "stop" : 1577873501784,
-          "duration" : 0
+          "start" : 1577962264724,
+          "stop" : 1577962264725,
+          "duration" : 1
         },
         "flaky" : false,
         "newFailed" : false,

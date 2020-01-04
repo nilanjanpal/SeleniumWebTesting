@@ -1,30 +1,30 @@
 [ {
-  "uid" : "50a4e6155a0ada92",
-  "name" : "test01",
-  "time" : {
-    "start" : 1577873501784,
-    "stop" : 1577873501784,
-    "duration" : 0
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "5dba4ed3368058c2",
+  "uid" : "64a1463f338f31a1",
   "name" : "testCase1",
   "time" : {
-    "start" : 1577873490614,
-    "stop" : 1577873490623,
-    "duration" : 9
+    "start" : 1577962255275,
+    "stop" : 1577962255283,
+    "duration" : 8
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "22418da28f1fdbca",
+  "uid" : "5293a55ed9d64ff8",
   "name" : "testCase2",
   "time" : {
-    "start" : 1577873490686,
-    "stop" : 1577873490686,
+    "start" : 1577962255337,
+    "stop" : 1577962255337,
     "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "63da46b98313e39b",
+  "name" : "test01",
+  "time" : {
+    "start" : 1577962264724,
+    "stop" : 1577962264725,
+    "duration" : 1
   },
   "status" : "passed",
   "severity" : "normal"
