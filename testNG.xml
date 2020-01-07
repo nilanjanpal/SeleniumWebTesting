@@ -2,7 +2,6 @@
 <suite name="TestSuite" parallel="false">
 	<listeners>
 		<listener class-name="customReport.ReportGenerator"/>
-		<listener class-name="customReport.ResultCollector"/>
 	</listeners>
   <test name="Test">
     <classes>
