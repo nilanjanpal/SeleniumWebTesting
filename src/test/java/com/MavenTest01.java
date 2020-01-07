@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-@Listeners(customReport.ResultCollector.class) public class MavenTest01 {
+public class MavenTest01 {
   
   
   @BeforeMethod
