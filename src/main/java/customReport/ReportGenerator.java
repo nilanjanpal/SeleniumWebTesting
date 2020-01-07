@@ -2,20 +2,16 @@ package customReport;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.testng.IInvokedMethod;
 import org.testng.IReporter;
-import org.testng.IResultMap;
 import org.testng.ISuite;
 import org.testng.ISuiteResult;
 import org.testng.ITestContext;
-import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import org.testng.xml.XmlSuite;
 
@@ -25,23 +21,9 @@ public class ReportGenerator implements IReporter {
   private final String[] headerColumns =
       {"Suite Name", "Class Name", "Test Case Name", "Start Time", "End Time", "Result"};
   ExcelGenerator excel;
+  HtmlGenerator html;
   XSSFWorkbook workbook;
   XSSFSheet worksheet;
-
-  public void generateReport(String[] headerColumns, List<String[]> passedTestCases,
-      List<String[]> failedTestCases, List<String[]> skippedTestCases) {
-    /*
-     * ExcelGenerator excel = new ExcelGenerator(); XSSFWorkbook workbook = excel.createWorkBook();
-     * XSSFSheet worksheet = excel.createSheet(workbook, sheetname);
-     * excel.createRowsColumns(workbook, worksheet, headerColumns, passedTestCases, failedTestCases,
-     * skippedTestCases); excel.writeToFile(workbook);
-     */
-  }
-
-  public void generateReport(String[] headerColumns, IResultMap passedTests, IResultMap failedTests,
-      IResultMap skippedTests) {
-
-  }
 
   @Override
   public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
@@ -74,7 +56,13 @@ public class ReportGenerator implements IReporter {
         }
       }
     }
+    writeToFile(workbook);
+  }
+
+  private void writeToFile(XSSFWorkbook workbook) {
     excel.writeToFile(workbook);
+    html.closeHtml();
+    html.writeToFile();
   }
 
   private void processResult(String suiteName, ITestResult testResult) {
@@ -104,19 +92,31 @@ public class ReportGenerator implements IReporter {
     }
     excel.createRowsColumns(worksheet, suiteName, testCaseClass, testcaseName, startDate, endDate,
         testCaseResult);
+    html.createTableData(suiteName, testCaseClass, testcaseName, startDate, endDate, testCaseResult);
   }
 
   private void initializeReport(String outputDirectory) {
-    excel = new ExcelGenerator(outputDirectory);
-    workbook = excel.createWorkBook();
-    worksheet = excel.createSheet(workbook, sheetname);
-    excel.setStyles(workbook);
-    worksheet = excel.createHeaders(worksheet, headerColumns);
+    initializeExcelReport(outputDirectory);
+    initializeHtmlReport(outputDirectory);
   }
 
   private String convertMillisecondToDate(long millisecond) {
     DateFormat simpleDate = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss");
     Date result = new Date(millisecond);
     return simpleDate.format(result);
+  }
+
+  private void initializeExcelReport(String outputDirectory) {
+    excel = new ExcelGenerator(outputDirectory);
+    workbook = excel.createWorkBook();
+    worksheet = excel.createSheet(workbook, sheetname);
+    excel.setStyles(workbook);
+    worksheet = excel.createHeaders(worksheet, headerColumns);
+  }
+  
+  private void initializeHtmlReport(String outputDirectory) {
+    html = new HtmlGenerator(outputDirectory);
+    html.initiateHtml();
+    html.createHeaders(headerColumns);
   }
 }

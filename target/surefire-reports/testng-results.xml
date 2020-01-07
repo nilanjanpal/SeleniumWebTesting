@@ -2,54 +2,54 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="TestSuite" duration-ms="10383" started-at="2020-01-07T10:47:05Z" finished-at="2020-01-07T10:47:15Z">
+  <suite name="TestSuite" duration-ms="12551" started-at="2020-01-07T14:53:40Z" finished-at="2020-01-07T14:53:53Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="10383" started-at="2020-01-07T10:47:05Z" finished-at="2020-01-07T10:47:15Z">
+    <test name="Test" duration-ms="12551" started-at="2020-01-07T14:53:40Z" finished-at="2020-01-07T14:53:53Z">
       <class name="com.MavenTest02">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.MavenTest02@d8305c2]" name="setup" is-config="true" duration-ms="7864" started-at="2020-01-07T10:47:06Z" finished-at="2020-01-07T10:47:13Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.MavenTest02@d8305c2]" name="setup" is-config="true" duration-ms="9515" started-at="2020-01-07T14:53:42Z" finished-at="2020-01-07T14:53:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="test01()[pri:0, instance:com.MavenTest02@d8305c2]" name="test01" duration-ms="8" started-at="2020-01-07T10:47:13Z" finished-at="2020-01-07T10:47:13Z">
+        <test-method status="PASS" signature="test01()[pri:0, instance:com.MavenTest02@d8305c2]" name="test01" duration-ms="21" started-at="2020-01-07T14:53:51Z" finished-at="2020-01-07T14:53:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test01 -->
-        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:com.MavenTest02@d8305c2]" name="quitBrowser" is-config="true" duration-ms="1707" started-at="2020-01-07T10:47:14Z" finished-at="2020-01-07T10:47:15Z">
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:com.MavenTest02@d8305c2]" name="quitBrowser" is-config="true" duration-ms="1753" started-at="2020-01-07T14:53:51Z" finished-at="2020-01-07T14:53:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->
       </class> <!-- com.MavenTest02 -->
       <class name="com.MavenTest01">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.MavenTest01@18230356]" name="beforeClass" is-config="true" duration-ms="51" started-at="2020-01-07T10:47:05Z" finished-at="2020-01-07T10:47:05Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.MavenTest01@18230356]" name="beforeClass" is-config="true" duration-ms="99" started-at="2020-01-07T14:53:41Z" finished-at="2020-01-07T14:53:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.MavenTest01@18230356]" name="beforeMethod" is-config="true" duration-ms="2" started-at="2020-01-07T10:47:05Z" finished-at="2020-01-07T10:47:05Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.MavenTest01@18230356]" name="beforeMethod" is-config="true" duration-ms="2" started-at="2020-01-07T14:53:41Z" finished-at="2020-01-07T14:53:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="testCase1()[pri:0, instance:com.MavenTest01@18230356]" name="testCase1" duration-ms="111" started-at="2020-01-07T10:47:05Z" finished-at="2020-01-07T10:47:05Z">
+        <test-method status="PASS" signature="testCase1()[pri:0, instance:com.MavenTest01@18230356]" name="testCase1" duration-ms="243" started-at="2020-01-07T14:53:41Z" finished-at="2020-01-07T14:53:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCase1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.MavenTest01@18230356]" name="afterMethod" is-config="true" duration-ms="8" started-at="2020-01-07T10:47:05Z" finished-at="2020-01-07T10:47:05Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.MavenTest01@18230356]" name="afterMethod" is-config="true" duration-ms="8" started-at="2020-01-07T14:53:41Z" finished-at="2020-01-07T14:53:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.MavenTest01@18230356]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-07T10:47:05Z" finished-at="2020-01-07T10:47:05Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.MavenTest01@18230356]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2020-01-07T14:53:41Z" finished-at="2020-01-07T14:53:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="testCase2()[pri:0, instance:com.MavenTest01@18230356]" name="testCase2" duration-ms="30" started-at="2020-01-07T10:47:05Z" finished-at="2020-01-07T10:47:06Z">
+        <test-method status="PASS" signature="testCase2()[pri:0, instance:com.MavenTest01@18230356]" name="testCase2" duration-ms="0" started-at="2020-01-07T14:53:42Z" finished-at="2020-01-07T14:53:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCase2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.MavenTest01@18230356]" name="afterMethod" is-config="true" duration-ms="2" started-at="2020-01-07T10:47:06Z" finished-at="2020-01-07T10:47:06Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.MavenTest01@18230356]" name="afterMethod" is-config="true" duration-ms="5" started-at="2020-01-07T14:53:42Z" finished-at="2020-01-07T14:53:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.MavenTest01@18230356]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-01-07T10:47:06Z" finished-at="2020-01-07T10:47:06Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.MavenTest01@18230356]" name="afterClass" is-config="true" duration-ms="10" started-at="2020-01-07T14:53:42Z" finished-at="2020-01-07T14:53:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
