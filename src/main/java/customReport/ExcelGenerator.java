@@ -17,7 +17,19 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelGenerator {
 
-  private static final String filePath = "SpreadSheetReports/ResultSummary.xlsx";
+  private static final String fileName = "ResultSummary.xlsx";
+  private String filePath;
+  private CellStyle mergeCellStyle;
+  private CellStyle headerCellStyle;
+  private CellStyle passCellStyle;
+  private CellStyle failCellStyle;
+  private CellStyle skipCellStyle;
+  private int rownum = 0;
+
+  public ExcelGenerator(String filePath) {
+    super();
+    this.filePath = filePath + "/" + fileName;
+  }
 
   public XSSFWorkbook createWorkBook() {
     XSSFWorkbook workbook = new XSSFWorkbook();
@@ -29,98 +41,90 @@ public class ExcelGenerator {
     return worksheet;
   }
 
-  public void createRowsColumns(XSSFWorkbook workbook, XSSFSheet worksheet,String[] headerColumns, List<String[]> passedTestCases,
-      List<String[]> failedTestCases, List<String[]> skippedTestCases) {
+  public void setStyles(XSSFWorkbook workbook) {
 
-    int rownum = 0;
-    String classname = "";
-    Row row;
-    Cell cell;
     Font font;
-    CellStyle mergeCellStyle = workbook.createCellStyle();
-    CellStyle headerCellStyle = workbook.createCellStyle();
-    CellStyle passCellStyle = workbook.createCellStyle();
-    CellStyle failCellStyle = workbook.createCellStyle();
-    CellStyle skipCellStyle = workbook.createCellStyle();
-    
+
+    mergeCellStyle = workbook.createCellStyle();
+    headerCellStyle = workbook.createCellStyle();
+    passCellStyle = workbook.createCellStyle();
+    failCellStyle = workbook.createCellStyle();
+    skipCellStyle = workbook.createCellStyle();
+
     mergeCellStyle.setAlignment(HorizontalAlignment.CENTER);
     mergeCellStyle.setFillForegroundColor(IndexedColors.LIGHT_YELLOW.getIndex());
     mergeCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
     font = workbook.createFont();
     font.setBold(true);
     mergeCellStyle.setFont(font);
-    
+
     headerCellStyle.setAlignment(HorizontalAlignment.CENTER);
     headerCellStyle.setFont(font);
-    
+
     passCellStyle.setFillForegroundColor(IndexedColors.LIGHT_GREEN.getIndex());
     passCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
     failCellStyle.setFillForegroundColor(IndexedColors.RED.getIndex());
     failCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
     skipCellStyle.setFillForegroundColor(IndexedColors.LIGHT_ORANGE.getIndex());
     skipCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+  }
+
+  public XSSFSheet createRowsColumns(XSSFSheet worksheet, String suiteName, String className, String testCaseName,
+      String startDate, String endDate, String testCaseResult) {
+
+    Row row;
+    Cell cell;
+    CellStyle style = passCellStyle ;
     
+    switch(testCaseResult) {
+      case "PASS":
+        style = passCellStyle;
+        break;
+      case "FAIL":
+        style = failCellStyle;
+        break;
+      case "SKIP":
+        style = skipCellStyle;
+        break;
+    }
+
     row = worksheet.createRow(rownum++);
     cell = row.createCell(0);
-    cell.setCellValue(headerColumns[0]);
-    cell.setCellStyle(headerCellStyle);
+    cell.setCellValue(suiteName);
+    cell.setCellStyle(style);
     cell = row.createCell(1);
-    cell.setCellValue(headerColumns[1]);
-    cell.setCellStyle(headerCellStyle);
+    cell.setCellValue(className);
+    cell.setCellStyle(style);
     cell = row.createCell(2);
-    cell.setCellValue(headerColumns[2]);
-    cell.setCellStyle(headerCellStyle);
+    cell.setCellValue(testCaseName);
+    cell.setCellStyle(style);
     cell = row.createCell(3);
-    cell.setCellValue(headerColumns[3]);
-    cell.setCellStyle(headerCellStyle);
+    cell.setCellValue(startDate);
+    cell.setCellStyle(style);
+    cell = row.createCell(4);
+    cell.setCellValue(endDate);
+    cell.setCellStyle(style);
+    cell = row.createCell(5);
+    cell.setCellValue(testCaseResult);
+    cell.setCellStyle(style);
 
-    for (String[] testCases : skippedTestCases) {
-      row = worksheet.createRow(rownum++);
-      cell = row.createCell(0);
-      cell.setCellValue(testCases[0]);
-      cell = row.createCell(1);
-      cell.setBlank();
-      cell = row.createCell(2);
-      cell.setBlank();
-      cell = row.createCell(3);
-      cell.setCellValue(testCases[1]);
-      cell.setCellStyle(skipCellStyle);
+    return worksheet;
+  }
+
+  public XSSFSheet createHeaders(XSSFSheet worksheet, String[] headerColumns) {
+
+    Row row;
+    Cell cell;
+    int cellnum = 0;
+
+    row = worksheet.createRow(rownum++);
+    for (String columnName : headerColumns) {
+      cell = row.createCell(cellnum++);
+      cell.setCellValue(columnName);
+      cell.setCellStyle(headerCellStyle);
     }
-    
-    for (String[] testCases : passedTestCases) {
-      if(!classname.equalsIgnoreCase(testCases[4])) {
-        row = worksheet.createRow(rownum++);
-        cell = row.createCell(0);
-        cell.setCellValue(testCases[4]);
-        classname=testCases[4];
-        cell.setCellStyle(mergeCellStyle);
-        worksheet.addMergedRegion(new CellRangeAddress(rownum-1,rownum-1,0,3));
-      }
-      row = worksheet.createRow(rownum++);
-      cell = row.createCell(0);
-      cell.setCellValue(testCases[0]);
-      cell = row.createCell(1);
-      cell.setCellValue(testCases[1]);
-      cell = row.createCell(2);
-      cell.setCellValue(testCases[2]);
-      cell = row.createCell(3);
-      cell.setCellValue(testCases[3]);
-      cell.setCellStyle(passCellStyle);
-    }
-    
-    for (String[] testCases : failedTestCases) {
-      row = worksheet.createRow(rownum++);
-      cell = row.createCell(0);
-      cell.setCellValue(testCases[0]);
-      cell = row.createCell(1);
-      cell.setCellValue(testCases[1]);
-      cell = row.createCell(2);
-      cell.setCellValue(testCases[2]);
-      cell = row.createCell(3);
-      cell.setCellValue(testCases[3]);
-      cell.setCellStyle(failCellStyle);
-    }
-    
+
+    return worksheet;
   }
 
   public void writeToFile(XSSFWorkbook workbook) {
