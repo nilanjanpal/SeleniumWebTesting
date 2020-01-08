@@ -1,0 +1,27 @@
+table {
+	border-collapse: collapse;
+}
+
+th, td {
+	border: 1px solid blue;
+	padding: 10px;
+}
+
+.pass{
+	background-color: PaleGreen;
+}
+
+.fail{
+	background-color: red;
+}
+
+.skip{
+	background-color: orange;
+}
+
+.suite{
+	background-color: yellow;
+	text-align: center;
+	font-weight: bold;
+	display: block;
+}

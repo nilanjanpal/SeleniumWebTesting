@@ -10,6 +10,7 @@ import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -22,6 +23,7 @@ public class ExcelGenerator {
   private CellStyle passCellStyle;
   private CellStyle failCellStyle;
   private CellStyle skipCellStyle;
+  private CellStyle suiteCellStyle;
   private int rownum = 0;
 
   public ExcelGenerator(String filePath) {
@@ -48,6 +50,7 @@ public class ExcelGenerator {
     passCellStyle = workbook.createCellStyle();
     failCellStyle = workbook.createCellStyle();
     skipCellStyle = workbook.createCellStyle();
+    suiteCellStyle = workbook.createCellStyle();
 
     mergeCellStyle.setAlignment(HorizontalAlignment.CENTER);
     mergeCellStyle.setFillForegroundColor(IndexedColors.LIGHT_YELLOW.getIndex());
@@ -65,6 +68,24 @@ public class ExcelGenerator {
     failCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
     skipCellStyle.setFillForegroundColor(IndexedColors.LIGHT_ORANGE.getIndex());
     skipCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+    suiteCellStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
+    suiteCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+    suiteCellStyle.setAlignment(HorizontalAlignment.CENTER);
+    suiteCellStyle.setFont(font);
+  }
+  
+  public XSSFSheet createSuiteRow(XSSFSheet worksheet, String suiteName) {
+    
+    Row row;
+    Cell cell;
+    
+    row = worksheet.createRow(rownum);
+    cell = row.createCell(0);
+    cell.setCellValue("Suite Name -"+suiteName);
+    cell.setCellStyle(suiteCellStyle);
+    worksheet.addMergedRegion(new CellRangeAddress(rownum, rownum, 0, 4));
+    rownum++;
+    return worksheet;
   }
 
   public XSSFSheet createRowsColumns(XSSFSheet worksheet, String suiteName, String className, String testCaseName,
@@ -88,21 +109,18 @@ public class ExcelGenerator {
 
     row = worksheet.createRow(rownum++);
     cell = row.createCell(0);
-    cell.setCellValue(suiteName);
-    cell.setCellStyle(style);
-    cell = row.createCell(1);
     cell.setCellValue(className);
     cell.setCellStyle(style);
-    cell = row.createCell(2);
+    cell = row.createCell(1);
     cell.setCellValue(testCaseName);
     cell.setCellStyle(style);
-    cell = row.createCell(3);
+    cell = row.createCell(2);
     cell.setCellValue(startDate);
     cell.setCellStyle(style);
-    cell = row.createCell(4);
+    cell = row.createCell(3);
     cell.setCellValue(endDate);
     cell.setCellStyle(style);
-    cell = row.createCell(5);
+    cell = row.createCell(4);
     cell.setCellValue(testCaseResult);
     cell.setCellStyle(style);
 

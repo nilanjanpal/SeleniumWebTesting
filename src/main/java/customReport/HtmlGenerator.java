@@ -20,7 +20,7 @@ public class HtmlGenerator {
   public void initiateHtml() {
     htmlBuilder = new StringBuilder();
     htmlBuilder.append(
-        "<html><head><link rel=\"stylesheet\" href=\"./result-summary.css\"><title>Report Summary</title></head>");
+        "<html><head><link rel=\"stylesheet\" href=\"./../../src/main/resources/result-summary.css\"><title>Report Summary</title></head>");
     htmlBuilder.append("<body>");
     htmlBuilder.append("<table>");
   }
@@ -32,6 +32,20 @@ public class HtmlGenerator {
       htmlBuilder.append(columnName);
       htmlBuilder.append("</b></td>");
     }
+    htmlBuilder.append("</tr>");
+  }
+  
+  public void createSuiteRow(String suiteName) {
+    
+    String cssClass = "suite";
+    
+    htmlBuilder.append("<tr ");
+    htmlBuilder.append("class=\"");
+    htmlBuilder.append(cssClass);
+    htmlBuilder.append("\">");
+    htmlBuilder.append("<th colspan=\"5\">");
+    htmlBuilder.append("Suite Name - "+suiteName);
+    htmlBuilder.append("</th>");
     htmlBuilder.append("</tr>");
   }
 
@@ -56,9 +70,6 @@ public class HtmlGenerator {
     htmlBuilder.append("class=\"");
     htmlBuilder.append(cssClass);
     htmlBuilder.append("\">");
-    htmlBuilder.append("<td>");
-    htmlBuilder.append(suiteName);
-    htmlBuilder.append("</b></td>");
     htmlBuilder.append("<td>");
     htmlBuilder.append(testCaseClass);
     htmlBuilder.append("</b></td>");
