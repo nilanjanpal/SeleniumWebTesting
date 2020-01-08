@@ -19,7 +19,7 @@ public class ReportGenerator implements IReporter {
 
   private final String sheetname = "Result Summary";
   private final String[] headerColumns =
-      {"Suite Name", "Class Name", "Test Case Name", "Start Time", "End Time", "Result"};
+      {"Class Name", "Test Case Name", "Start Time", "End Time", "Result"};
   ExcelGenerator excel;
   HtmlGenerator html;
   XSSFWorkbook workbook;
@@ -39,6 +39,7 @@ public class ReportGenerator implements IReporter {
         isCustomReportsCreated = true;
       }
       suiteName = iSuite.getName();
+      createHeaders(suiteName, headerColumns, worksheet);
       Map<String, ISuiteResult> suiteResults = iSuite.getResults();
       for (ISuiteResult result : suiteResults.values()) {
         ITestContext context = result.getTestContext();
@@ -58,6 +59,13 @@ public class ReportGenerator implements IReporter {
     }
     writeToFile(workbook);
   }
+  
+  private void createHeaders(String suiteName, String[] headerColumns, XSSFSheet worksheet) {
+    worksheet = excel.createSuiteRow(worksheet, suiteName);
+    worksheet = excel.createHeaders(worksheet, headerColumns);
+    html.createSuiteRow(suiteName);
+    html.createHeaders(headerColumns);
+  }
 
   private void writeToFile(XSSFWorkbook workbook) {
     excel.writeToFile(workbook);
@@ -72,7 +80,7 @@ public class ReportGenerator implements IReporter {
     String testcaseName = "";
     String startDate = "";
     String endDate = "";
-
+    
     testCaseClass = testResult.getMethod().getRealClass().toString();
     testcaseName = testResult.getMethod().getMethodName();
     startDate = convertMillisecondToDate(testResult.getStartMillis());
@@ -111,12 +119,10 @@ public class ReportGenerator implements IReporter {
     workbook = excel.createWorkBook();
     worksheet = excel.createSheet(workbook, sheetname);
     excel.setStyles(workbook);
-    worksheet = excel.createHeaders(worksheet, headerColumns);
   }
   
   private void initializeHtmlReport(String outputDirectory) {
     html = new HtmlGenerator(outputDirectory);
     html.initiateHtml();
-    html.createHeaders(headerColumns);
   }
 }
