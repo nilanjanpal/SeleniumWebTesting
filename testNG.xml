@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="TestSuite" parallel="false">
 	<listeners>
-		<listener class-name="customReport.ReportGenerator"/>
+		<listener class-name="customReport.ReportGenerator" />
 	</listeners>
-  <test name="Test">
-    <classes>
-      <class name="com.MavenTest01"/>
-      <class name="com.MavenTest02"/>
-    </classes>
-  </test> <!-- Test -->
+	<test name="Test">
+		<classes>
+			<class name="com.MavenTest01" />
+			<class name="com.MavenTest02" />
+			<class name="com.MavenTest03" />
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->

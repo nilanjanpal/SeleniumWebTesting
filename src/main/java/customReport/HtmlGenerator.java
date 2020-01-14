@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.util.List;
 
 public class HtmlGenerator {
 
@@ -34,27 +35,28 @@ public class HtmlGenerator {
     }
     htmlBuilder.append("</tr>");
   }
-  
+
   public void createSuiteRow(String suiteName) {
-    
+
     String cssClass = "suite";
-    
+
     htmlBuilder.append("<tr ");
     htmlBuilder.append("class=\"");
     htmlBuilder.append(cssClass);
     htmlBuilder.append("\">");
-    htmlBuilder.append("<th colspan=\"5\">");
-    htmlBuilder.append("Suite Name - "+suiteName);
+    htmlBuilder.append("<th colspan=\"7\">");
+    htmlBuilder.append("Suite Name - " + suiteName);
     htmlBuilder.append("</th>");
     htmlBuilder.append("</tr>");
   }
 
   public void createTableData(String suiteName, String testCaseClass, String testcaseName,
-      String startDate, String endDate, String testCaseResult) {
-    
+      String startDate, String endDate, String testCaseResult, List<String> reporterLogs,
+      String exceptionMessage) {
+
     String cssClass = "";
-    
-    switch(testCaseResult) {
+
+    switch (testCaseResult) {
       case "PASS":
         cssClass = "pass";
         break;
@@ -65,26 +67,36 @@ public class HtmlGenerator {
         cssClass = "skip";
         break;
     }
-    
+
     htmlBuilder.append("<tr ");
     htmlBuilder.append("class=\"");
     htmlBuilder.append(cssClass);
     htmlBuilder.append("\">");
     htmlBuilder.append("<td>");
     htmlBuilder.append(testCaseClass);
-    htmlBuilder.append("</b></td>");
+    htmlBuilder.append("</td>");
     htmlBuilder.append("<td>");
     htmlBuilder.append(testcaseName);
-    htmlBuilder.append("</b></td>");
+    htmlBuilder.append("</td>");
     htmlBuilder.append("<td>");
     htmlBuilder.append(startDate);
-    htmlBuilder.append("</b></td>");
+    htmlBuilder.append("</td>");
     htmlBuilder.append("<td>");
     htmlBuilder.append(endDate);
-    htmlBuilder.append("</b></td>");
+    htmlBuilder.append("</td>");
     htmlBuilder.append("<td>");
     htmlBuilder.append(testCaseResult);
-    htmlBuilder.append("</b></td>");
+    htmlBuilder.append("</td>");
+    htmlBuilder.append("<td>");
+    for (String string : reporterLogs) {
+      htmlBuilder.append(string);
+      htmlBuilder.append("<br>");
+    }
+    htmlBuilder.append("</td>");
+    
+    htmlBuilder.append("<td>");
+    htmlBuilder.append(exceptionMessage);
+    htmlBuilder.append("</td>");
     htmlBuilder.append("</tr>");
   }
 

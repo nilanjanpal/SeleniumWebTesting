@@ -1,5 +1,7 @@
 package customReport;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,13 +15,15 @@ import org.testng.ISuite;
 import org.testng.ISuiteResult;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.xml.XmlSuite;
+import customLogger.Logger;
 
 public class ReportGenerator implements IReporter {
 
   private final String sheetname = "Result Summary";
-  private final String[] headerColumns =
-      {"Class Name", "Test Case Name", "Start Time", "End Time", "Result"};
+  private final String[] headerColumns = {"Class Name", "Test Case Name", "Start Time", "End Time",
+      "Result", "Reporter Logs", "Exception Detail"};
   ExcelGenerator excel;
   HtmlGenerator html;
   XSSFWorkbook workbook;
@@ -28,7 +32,6 @@ public class ReportGenerator implements IReporter {
   @Override
   public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
       String outputDirectory) {
-
     Boolean isCustomReportsCreated = false;
     String suiteName = "";
     Set<ITestResult> results;
@@ -59,7 +62,7 @@ public class ReportGenerator implements IReporter {
     }
     writeToFile(workbook);
   }
-  
+
   private void createHeaders(String suiteName, String[] headerColumns, XSSFSheet worksheet) {
     worksheet = excel.createSuiteRow(worksheet, suiteName);
     worksheet = excel.createHeaders(worksheet, headerColumns);
@@ -80,11 +83,23 @@ public class ReportGenerator implements IReporter {
     String testcaseName = "";
     String startDate = "";
     String endDate = "";
-    
-    testCaseClass = testResult.getMethod().getRealClass().toString();
+    String exceptionMessage = "";
+    List<String> reporterLogs;
+    Throwable exception;
+
+    testCaseClass = testResult.getMethod().getRealClass().getSimpleName();
+    reporterLogs = Logger.getOutput(testCaseClass);
     testcaseName = testResult.getMethod().getMethodName();
     startDate = convertMillisecondToDate(testResult.getStartMillis());
     endDate = convertMillisecondToDate(testResult.getEndMillis());
+
+    exception = testResult.getThrowable();
+    if (exception != null) {
+      exceptionMessage = exception.getMessage();
+    } else {
+      exceptionMessage = "NONE";
+    }
+
     switch (testResult.getStatus()) {
       case 1:
         testCaseResult = "PASS";
@@ -99,8 +114,9 @@ public class ReportGenerator implements IReporter {
         testCaseResult = "IN PROGRESS";
     }
     excel.createRowsColumns(worksheet, suiteName, testCaseClass, testcaseName, startDate, endDate,
-        testCaseResult);
-    html.createTableData(suiteName, testCaseClass, testcaseName, startDate, endDate, testCaseResult);
+        testCaseResult, reporterLogs, exceptionMessage);
+    html.createTableData(suiteName, testCaseClass, testcaseName, startDate, endDate, testCaseResult,
+        reporterLogs, exceptionMessage);
   }
 
   private void initializeReport(String outputDirectory) {
@@ -120,7 +136,7 @@ public class ReportGenerator implements IReporter {
     worksheet = excel.createSheet(workbook, sheetname);
     excel.setStyles(workbook);
   }
-  
+
   private void initializeHtmlReport(String outputDirectory) {
     html = new HtmlGenerator(outputDirectory);
     html.initiateHtml();

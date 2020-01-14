@@ -3,6 +3,7 @@ package customReport;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.FillPatternType;
@@ -66,6 +67,7 @@ public class ExcelGenerator {
     passCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
     failCellStyle.setFillForegroundColor(IndexedColors.RED.getIndex());
     failCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+    failCellStyle.setWrapText(true);
     skipCellStyle.setFillForegroundColor(IndexedColors.LIGHT_ORANGE.getIndex());
     skipCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
     suiteCellStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
@@ -83,14 +85,15 @@ public class ExcelGenerator {
     cell = row.createCell(0);
     cell.setCellValue("Suite Name -"+suiteName);
     cell.setCellStyle(suiteCellStyle);
-    worksheet.addMergedRegion(new CellRangeAddress(rownum, rownum, 0, 4));
+    worksheet.addMergedRegion(new CellRangeAddress(rownum, rownum, 0, 6));
     rownum++;
     return worksheet;
   }
 
   public XSSFSheet createRowsColumns(XSSFSheet worksheet, String suiteName, String className, String testCaseName,
-      String startDate, String endDate, String testCaseResult) {
+      String startDate, String endDate, String testCaseResult, List<String> reporterLogs, String exceptionMessage) {
 
+    String reporterLog = "";
     Row row;
     Cell cell;
     CellStyle style = passCellStyle ;
@@ -123,7 +126,24 @@ public class ExcelGenerator {
     cell = row.createCell(4);
     cell.setCellValue(testCaseResult);
     cell.setCellStyle(style);
+    cell = row.createCell(5);
+    for(String log: reporterLogs) {
+      reporterLog = reporterLog + log + "\n";
+    }
+    cell.setCellValue(reporterLog);
+    cell.setCellStyle(style);
+    cell = row.createCell(6);
+    cell.setCellValue(exceptionMessage);
+    cell.setCellStyle(style);
 
+    worksheet.autoSizeColumn(0);
+    worksheet.autoSizeColumn(1);
+    worksheet.autoSizeColumn(2);
+    worksheet.autoSizeColumn(3);
+    worksheet.autoSizeColumn(4);
+    worksheet.autoSizeColumn(5);
+    worksheet.autoSizeColumn(6);
+    
     return worksheet;
   }
 
