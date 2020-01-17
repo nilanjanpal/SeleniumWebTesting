@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.MavenTest02">
+      <class name="com.MavenTest03">
         <methods>
-          <include name="test01"/>
-          <include name="setup"/>
-          <include name="quitBrowser"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="testCase1"/>
         </methods>
-      </class> <!-- com.MavenTest02 -->
+      </class> <!-- com.MavenTest03 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

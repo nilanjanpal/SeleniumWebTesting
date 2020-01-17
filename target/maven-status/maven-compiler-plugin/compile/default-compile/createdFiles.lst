@@ -1,3 +1,7 @@
+customLogger\Logger.class
 customReport\ReportGenerator.class
 customReport\ExcelGenerator.class
+listener\TestCaseListener.class
+driverManager\Driver.class
 customReport\HtmlGenerator.class
+ioutility\FileUtility.class
