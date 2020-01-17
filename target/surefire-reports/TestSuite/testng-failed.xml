@@ -3,14 +3,13 @@
 <suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [TestSuite]">
   <listeners>
     <listener class-name="customReport.ReportGenerator"/>
+    <listener class-name="listener.TestCaseListener"/>
   </listeners>
   <test thread-count="5" verbose="0" name="Test(failed)">
     <classes>
       <class name="com.MavenTest03">
         <methods>
-          <include name="afterClass"/>
           <include name="beforeMethod"/>
-          <include name="beforeClass"/>
           <include name="afterMethod"/>
           <include name="testCase1"/>
         </methods>
