@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 18.892 s <<< FAILURE! - in TestSuite
-testCase1(com.MavenTest03)  Time elapsed: 1.216 s  <<< FAILURE!
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 34.095 s <<< FAILURE! - in TestSuite
+testCase1(com.MavenTest03)  Time elapsed: 6.052 s  <<< FAILURE!
 java.lang.AssertionError: expected [false] but found [true]
-	at com.MavenTest03.testCase1(MavenTest03.java:51)
+	at com.MavenTest03.testCase1(MavenTest03.java:54)
 

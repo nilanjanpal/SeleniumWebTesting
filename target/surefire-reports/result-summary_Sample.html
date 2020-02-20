@@ -1,0 +1,149 @@
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Category", "Count"],
+          ["Pass", 2],
+          ["Fail", 1],
+          ["Skip", 0]
+        ]);
+        var options = { title: "Test Case Result" };
+        var chart = new google.visualization.PieChart(
+          document.getElementById("testResult")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Category", "Count"],
+          ["Methods successfully ran", 6],
+          ["Exception generated", 1]
+        ]);
+        var options = { title: "Methods Result" };
+        var chart = new google.visualization.PieChart(
+          document.getElementById("methodResult")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      href="./../../src/main/resources/result-summary.css"
+    />
+    <title>Report Summary</title>
+  </head>
+  <body>
+    <div class="pad">
+      <table class="pad tablew">
+        <tr>
+          <td class="border-black">
+            <table>
+              <tr>
+                <td>Total number of test cases -</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>Passed test case count -</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Failed test case count -</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Skipped test case count -</td>
+                <td>0</td>
+              </tr>
+            </table>
+          </td>
+          <td class="border-black">
+            <div id="testResult"></div>
+          </td>
+          <td class="border-black">
+            <table>
+              <tr>
+                <td>Total Number of Methods Called -</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td>Method ran successfully -</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>Exception generated -</td>
+                <td>1</td>
+              </tr>
+            </table>
+          </td>
+          <td class="border-black">
+            <div id="methodResult"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="pad">
+      <table class="tablew">
+        <tr class="suite">
+          <th colspan="6">Suite Name - TestSuite</th>
+        </tr>
+        <tr>
+          <td class="border-white"><b>Class Name</b></td>
+          <td class="border-white"><b>Test Case Name</b></td>
+          <td class="border-white"><b>Start Time</b></td>
+          <td class="border-white"><b>End Time</b></td>
+          <td class="border-white"><b>Result</b></td>
+          <td class="border-white"><b>Exception Detail</b></td>
+        </tr>
+        <tbody>
+          <tr class="pass">
+            <td class="border-white">
+              <a href="com.MavenTest01.html">MavenTest01</a>
+            </td>
+            <td class="border-white">testCase1</td>
+            <td class="border-white">31-Jan-2020 07:39:15</td>
+            <td class="border-white">31-Jan-2020 07:39:24</td>
+            <td class="border-white">PASS</td>
+            <td class="border-white">NONE</td>
+          </tr>
+          <tr class="pass">
+            <td class="border-white">
+              <a href="com.MavenTest02.html">MavenTest02</a>
+            </td>
+            <td class="border-white">test01</td>
+            <td class="border-white">31-Jan-2020 07:39:24</td>
+            <td class="border-white">31-Jan-2020 07:39:31</td>
+            <td class="border-white">PASS</td>
+            <td class="border-white">NONE</td>
+          </tr>
+          <tr class="fail">
+            <td class="border-white">
+              <a href="com.MavenTest03.html">MavenTest03</a>
+            </td>
+            <td class="border-white">testCase1</td>
+            <td class="border-white">31-Jan-2020 07:39:31</td>
+            <td class="border-white">31-Jan-2020 07:39:38</td>
+            <td class="border-white">FAIL</td>
+            <td class="border-white">
+              expected [false] but found [true]
+              <p><a href="">Details ...</a></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="footer">
+        <p>Click on class name for details</p>
+      </div>
+    </div>
+  </body>
+</html>

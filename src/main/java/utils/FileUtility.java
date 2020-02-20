@@ -1,4 +1,4 @@
-package ioutility;
+package utils;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class FileUtility {
   public static File createDirectory(String className) {
     File file = null;
     if (!checkDirectory(className)) {
-      file = new File(screenshotPath + "/" + className);
+      file = new File(screenshotPath + File.separator + className);
       file.mkdirs();
     }
     return file;
@@ -23,7 +23,7 @@ public class FileUtility {
 
   private static boolean checkDirectory(String className) {
     boolean isExists = false;
-    File file = new File(screenshotPath + "/" + className);
+    File file = new File(screenshotPath + File.separator + className);
     if (file.exists()) {
       isExists = true;
     }

@@ -13,36 +13,44 @@ import customLogger.Logger;
 import driverManager.Driver;
 
 public class MavenTest02 {
-
-  WebDriver driver = null;
+  
+  private String className = "MavenTest02";
+  private WebDriver driver = null;
 
   @BeforeMethod
   public void setup() {
-    String methodName = "MavenTest02.setup";
-    Logger.log("MavenTest02", methodName + "Start");
+    String methodName = "setup";
+    Logger.log("Method Start");
     driver = Driver.getDriver();
-    Logger.log("MavenTest02", methodName + "End");
+    Logger.log("Method End");
   }
 
   @Test
   public void test01() {
-    String methodName = "MavenTest02.test01";
-    Logger.log("MavenTest02", methodName + "Start");
+    String methodName = "test01";
+    Logger.log("Method Start");
     WebDriverWait wait = new WebDriverWait(driver, 10);
     driver.get("http://www.google.co.in");
-    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//img[@alt='Google']")));
+    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@title='Search']")));
     WebElement element = driver.findElement(By.xpath("//input[@title='Search']"));
     element.sendKeys("Selenium");
     element.sendKeys(Keys.ENTER);
-    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(@title,'Go to Google Home')]")));
-    Logger.log("MavenTest02", methodName + "End");
+    //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(@title,'Go to Google Home')]")));
+    //Driver.waitForLoad(driver);
+    try {
+      Thread.sleep(5000);
+    } catch (InterruptedException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    Logger.log("Method End");
   }
 
   @AfterMethod
   public void quitBrowser() {
-    String methodName = "MavenTest02.quitBrowser";
-    Logger.log("MavenTest02", methodName + "Start");
-    Logger.log("MavenTest02", methodName + "End");
+    String methodName = "quitBrowser";
+    Logger.log("Method Start");
+    Logger.log("Method End");
   }
 
 }
