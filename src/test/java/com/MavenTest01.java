@@ -19,35 +19,44 @@ import org.testng.annotations.AfterClass;
 
 public class MavenTest01 {
 
-  WebDriver driver;
+  private String className = "MavenTest01";
+  private WebDriver driver;
 
   @BeforeMethod
   public void beforeMethod() {
-    String methodName = "MavenTest01.beforeMethod";
-    Logger.log("MavenTest01", methodName + "Start");
+    
+    String methodName = "beforeMethod";
+    Logger.log("Method Start");
     driver = Driver.getDriver();
-    Logger.log("MavenTest01", methodName + "End");
+    Logger.log("Method End");
   }
 
   @AfterMethod
   public void afterMethod() {
-    String methodName = "MavenTest01.afterMethod";
-    Logger.log("MavenTest01", methodName + "Start");
-    Logger.log("MavenTest01", methodName + "End");
+    String methodName = "afterMethod";
+    Logger.log("Method Start");
+    Logger.log("Method End");
   }
 
   @Test
   public void testCase1() {
-    String methodName = "MavenTest01.testCase1";
-    Logger.log("MavenTest01", methodName + "Start");
+    String methodName = "testCase1";
+    Logger.log("Method Start");
     WebDriverWait wait = new WebDriverWait(driver, 10);
     driver.get("http://www.google.co.in");
-    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//img[@alt='Google']")));
+    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@title='Search']")));
     WebElement element = driver.findElement(By.xpath("//input[@title='Search']"));
     element.sendKeys("Java");
     element.sendKeys(Keys.ENTER);
-    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(@title,'Go to Google Home')]")));
-    Logger.log("MavenTest01", methodName + "End");
+    //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(@title,'Go to Google Home')]")));
+    //Driver.waitForLoad(driver);
+    try {
+      Thread.sleep(5000);
+    } catch (InterruptedException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    Logger.log("Method End");
   }
 
 

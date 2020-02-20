@@ -15,40 +15,52 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import customLogger.Logger;
 import driverManager.Driver;
+import utils.Result;
 
 public class MavenTest03 {
-  
-  WebDriver driver;
-  
+
+  private String className = "MavenTest03";
+  private WebDriver driver;
+
   @BeforeMethod
   public void beforeMethod() {
-    String methodName = "MavenTest03.beforeMethod";
-    Logger.log("MavenTest03", methodName + "Start");
+    String methodName = "beforeMethod";
+    Logger.log("Method Start");
     driver = Driver.getDriver();
-    Logger.log("MavenTest03", methodName + "End");
+    Logger.log("Method End");
   }
 
   @AfterMethod
   public void afterMethod() {
-    String methodName = "MavenTest03.afterMethod";
-    Logger.log("MavenTest03", methodName + "Start");
-    Logger.log("MavenTest03", methodName + "End");
+    String methodName = "afterMethod";
+    Logger.log("Method Start");
+    Logger.log("Method End");
   }
 
   @Test
   public void testCase1() {
-    String methodName = "MavenTest03.testCase1";
-    Logger.log("MavenTest03", methodName + "Start");
+    String methodName = "testCase1";
+    Logger.log("Method Start");
     WebDriverWait wait;
-    wait = new WebDriverWait(driver, 10);
-    driver.get("http://www.google.co.in");
-    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//img[@alt='Google']")));
-    WebElement element = driver.findElement(By.xpath("//input[@title='Search']"));
-    element.sendKeys("Maven");
-    element.sendKeys(Keys.ENTER);
-    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(@title,'Go to Google Home')]")));
-    Logger.log("MavenTest03", methodName + "End");
-    Assert.assertEquals(true, false);
+    try {
+      wait = new WebDriverWait(driver, 10);
+      driver.get("http://www.google.co.in");
+      wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@title='Search']")));
+      WebElement element = driver.findElement(By.xpath("//input[@title='Search']"));
+      element.sendKeys("Maven");
+      element.sendKeys(Keys.ENTER);
+      Thread.sleep(5000);
+      Logger.log("Method End");
+      Assert.assertEquals(true, false);
+      Logger.logResult(methodName, Result.PASS);
+    } catch (AssertionError aer) {
+      Logger.logResult(methodName, Result.FAIL);
+      aer.printStackTrace();
+      throw aer;
+    } catch (Exception e) {
+      Logger.logResult(methodName, Result.FAIL);
+      e.printStackTrace();
+    }
   }
 
 }

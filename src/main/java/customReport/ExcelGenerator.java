@@ -85,7 +85,7 @@ public class ExcelGenerator {
     cell = row.createCell(0);
     cell.setCellValue("Suite Name -"+suiteName);
     cell.setCellStyle(suiteCellStyle);
-    worksheet.addMergedRegion(new CellRangeAddress(rownum, rownum, 0, 6));
+    worksheet.addMergedRegion(new CellRangeAddress(rownum, rownum, 0, 5));
     rownum++;
     return worksheet;
   }
@@ -126,13 +126,11 @@ public class ExcelGenerator {
     cell = row.createCell(4);
     cell.setCellValue(testCaseResult);
     cell.setCellStyle(style);
+    /*
+     * cell = row.createCell(5); for(String log: reporterLogs) { reporterLog = reporterLog + log +
+     * "\n"; } cell.setCellValue(reporterLog); cell.setCellStyle(style);
+     */
     cell = row.createCell(5);
-    for(String log: reporterLogs) {
-      reporterLog = reporterLog + log + "\n";
-    }
-    cell.setCellValue(reporterLog);
-    cell.setCellStyle(style);
-    cell = row.createCell(6);
     cell.setCellValue(exceptionMessage);
     cell.setCellStyle(style);
 

@@ -1,32 +1,96 @@
+*{
+	font-family: Segoe UI;
+}
+
 table {
 	border-collapse: collapse;
 }
 
+.tablew{
+	width: 100%;
+	table-layout: fixed;
+}
+
+.border-black{
+	border: 1px solid black;
+}
+
+.border-white{
+	border: 1px solid white;
+}
+
 th, td {
-	border: 1px solid blue;
 	padding: 10px;
 	display: table-cell;
 }
 
-tr{
+tr {
 	display: table-row;
 }
 
-.pass{
+a{
+	text-decoration: none;
+}
+
+.pass {
 	background-color: PaleGreen;
 }
 
-.fail{
+.fail {
 	background-color: red;
 }
 
-.skip{
+.skip {
 	background-color: orange;
 }
 
-.suite{
-	background-color: yellow;
+.suite {
+	background-color: lightskyblue;
 	text-align: center;
 	font-weight: bold;
 	column-span: all;
+}
+
+.split {
+	height: 50%;
+	width: 50%;
+	position: fixed;
+	top: 0;
+}
+
+.left {
+	left: 0;
+}
+
+.right {
+	right: 0;
+}
+
+#piechart {
+	width: 20%;
+	height: 30%;
+}
+
+.padtb{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.padlr{
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.pad{
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	pading-right: 10px;
+}
+
+.footer {
+  width: 100%;
+  color: black;
+  font-size: 10;
+  font-style: italic;
 }
